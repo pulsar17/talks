@@ -94,18 +94,74 @@ relative: true
                                                     U+10FFFF 
 ```
 
-- Most characters live on BMP
-
+- Most widely-used characters live on BMP
 
 ---------
+
+# Now some Python
+
+```terminal20
+bash -c ipython3
+```
+
+---------
+
+# Encodings
+
+## encoding
+- Character -> codepoint = just a mapping
+    - Need to send the character over the network
+    - Maybe save it as a file on storage
+- Need to *translate* the character to bytes
+- How to translate?
+
+## A bit of history
+- 16 bits for every character
+    - `0xFFFF` codepoints was the limit
+    - In 1996, a clever hack was introduced
+    - Now `0x10FFFF` is the limit of codepoints
+- Need 21 bits
+    - Comments on efficiency?
+
+---------
+
+# The conversion
+
+## code unit
+- Character -> codepoint -> **code unit** **[+ code unit...]** -> byte [ + byte...]
+- Convert codepoint into code unit(s)
+    - Generally `8`, `16`, or `32` bits
+    - `utf-8`, `utf-16`, and `utf-32`
+
+For now we'll talk about the process until the code units
+
+### `utf-32`
+- Character -> codepoint -> one `32`-bit code unit
+    - Not memory/storage efficient
+    - But the programming model is easier, because of fixed width
+- Simplest encoding
+
+### `utf-16`
+- Character -> codepoint -> one `16`-bit or two `16`-bit code units
+    - For characters in BMP, one `16`-bit code unit
+    - For characters in other planes, two `16`-bit code units
+
+---------
+
+### `utf-8`
+- Character -> codepoint -> one-four `8`-bit code units
+    - For characters in ASCII, one `8`-bit code unit
+        - One-to-one compatible with ASCII
+    - For other characters in BMP, upto three `8-bit` code units
+- Most common encoding - default on Mac and Linux systems
+- Efficient if only dealing English and European languages
+- Variable width
+    - Not the most legible programming model
+
 
 - Standardize that across the industry, so that an Android user can send an iPhone user an 🍏 and it doesn't turn into 🍭
     - Not only emojis but written text: <japanese characters>
 - Standardize how text can be combined, represented, [sorted?] to express language.
-
----------
-
-# Answer: [Unicode](https://home.unicode.org/)
 
 ---------
 
@@ -124,7 +180,6 @@ Before we dive into Unicode, let's talk about hexadecimal. Isn't that a nice sys
    ┌────────────────────────────┐
    │10^3    10^2    10^1    10^0│
    └────────────────────────────┘
-
 
 ---------
 # hexadecimal (cont'd)
@@ -158,5 +213,3 @@ Before we dive into Unicode, let's talk about hexadecimal. Isn't that a nice sys
 # About the slides
 ## License
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-
