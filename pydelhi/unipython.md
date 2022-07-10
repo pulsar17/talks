@@ -281,7 +281,9 @@ bash -c ipython3
 
 # About the slides
 
----------
+## Slides created thanks to
+- [lookatme](https://pypi.org/project/lookatme/)
+- and ofcourse Python 🐍
 
 ## License
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
