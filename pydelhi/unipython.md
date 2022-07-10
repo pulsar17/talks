@@ -204,6 +204,15 @@ bash -c ipython3
 ```
 
 ---------
+## `ascii`
+- Good old ascii
+- 7-bit encoding
+    - If curious, it can encode `0x7F` characters
+
+```terminal15
+bash -c "man ascii"
+```
+---------
 
 # Encodings
 
