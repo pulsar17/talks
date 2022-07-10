@@ -262,7 +262,7 @@ For now we'll talk about the process until the code units
         - One-to-one compatible with ASCII
     - For other characters in BMP, upto three `8-bit` code units
 - Most common encoding - default on Mac and Linux systems
-- Efficient if only dealing English and European languages
+- Efficient if only dealing with English and European languages
 - Variable width
     - Not the most legible programming model
 
