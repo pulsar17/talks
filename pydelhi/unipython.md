@@ -40,13 +40,20 @@ lang: hexdump
 transform: xxd
 relative: true
 ```
----------
 
-# 🙂 (Question: Do you think it's text?)
-- yes/no
-- not sure
-- If you consider **abc** text, then why not 🙂🐼🐍
-- If no, you're in for a 🤸🕳
+--------
+
+# What is text? really?
+- abcdef
+- こんにちは
+- 🙂🐼🐍
+- 🤸🕳
+
+# Answer: It depends
+- Text is subjective
+- For us now, it's Unicode!
+- Unicode = Text for modern software
+- Formally, *Unicode is the universal character encoding*
 
 # Answer: [Unicode](https://home.unicode.org/)
 ---------
