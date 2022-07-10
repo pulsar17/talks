@@ -14,7 +14,16 @@ styles:
 - [pulsar17.me](https://pulsar17.me)
 
 ---------
-## What the talk is about
+
+# Discarded titles
+- ~~Unicode and Python: A match made in heaven~~
+- 🙂🤷 ~~Do you really understand text?~~
+- ~~What I wish I knew about text~~
+
+# Why am I giving this talk
+- Unicode is *confusing*
+
+# What the talk is about
 🍕
 🐼
 🔡
