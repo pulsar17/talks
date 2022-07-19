@@ -270,6 +270,18 @@ For now we'll talk about the process until the code units
 ---------
 # Now some more Python
 
+- Strings in Python are *Unicode strings*
+    - Unicode string = sequence of codepoints\*
+- So, strings in Python = sequence of *codepoints*
+- Iterate on a string
+   - क्या  
+```
+        क   U+0915
+        ्   U+094D
+        य   U+092F
+        ा   U+093E
+```
+
 ```python
 file = open("file.py", encoding="utf-16")
 file.read()
