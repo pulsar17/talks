@@ -43,7 +43,7 @@ relative: true
 
 --------
 
-# What is text? really?
+# What is text really?
 - abcdef
 - こんにちは
 - 🙂🐼🐍
@@ -134,7 +134,7 @@ Before we dive into Unicode, let's talk about hexadecimal. Isn't that a nice sys
 # Unicode related terminology
 
 ## character
-- Every character --> unique `codepoint`
+- Every character --> unique `codepoint` and unique `name`
 
 - A [Unicode] *character* is an abstract concept
     - Unicode characters ≠ Real characters
@@ -159,6 +159,7 @@ Before we dive into Unicode, let's talk about hexadecimal. Isn't that a nice sys
 |       ヵ              | `U+30F5`      |
 |       😀              | `U+1F600`     |
 |       ♫               | `U+266B`      |
+|       ु               | `U+0941`      |
 
 ## plane
 
