@@ -54,22 +54,26 @@ M.openTeachWindow = function()
     local win = vim.api.nvim_open_win(
         buf, false, {relative='cursor', row=0, col=0, width=width, height=height,  style='minimal'})
 
-    -- It'd be nice if the window could be closed
-    vim.keymap.set({'n', 'v'}, '<leader>e',
-        function()
-            vim.api.nvim_win_close(win, true)
-            activeWindows[win] = nil
-        end 
-    )
+    -- We want to be able to close the windows, so some bookkeeping
+    table.insert(M.activeWindows, win)
+end
 
-    -- We want to be able to close all the windows, so some bookkeeping
-    activeWindows[win] = true
+-- Close the last num teach windows
+M.closeTeachWindows = function(num)
+    for i = 1, (num or 1) do
+        lastWindowIndex = #M.activeWindows
+
+        if lastWindowIndex > 0 then
+            lastWindow = M.activeWindows[lastWindowIndex]
+            vim.api.nvim_win_close(lastWindow, true)
+            M.activeWindows[lastWindowIndex] = nil
+        end
+        -- Don't bother if all windows are already closed
+    end
 end
 
 M.closeAllTeachWindows = function() 
-    for win, _ in pairs(activeWindows) do
-        vim.api.nvim_win_close(win, true)
-    end
+    M.closeTeachWindows(#M.activeWindows)
 end
 
 return M
