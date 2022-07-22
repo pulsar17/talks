@@ -16,10 +16,6 @@
 
 
 from pprint import pprint
-import unicodedata
-
-# Various ways to add Unicode strings
-characters = "A", "\x61", "\N{KATAKANA LETTER SMALL KA}", "\U0001F600", "\u266B", "\u0941"
 
 
 def codepointify(codepoint: int):
@@ -38,12 +34,8 @@ def codepointify(codepoint: int):
     return f"U+{padded_hex_codepoint}"
 
 
-unicode_characters = [
-    (char, unicodedata.name(char))
-    for char in characters
-]
+characters = "A", "\x61", "\N{KATAKANA LETTER SMALL KA}", "\U0001F600", "\u266B", "\u0941"
 
-if __name__ == "__main__":
-    pprint(unicode_characters)
-    import doctest
-    doctest.testmod()
+unicode_characters = [char for char in characters]
+
+pprint(unicode_characters)
