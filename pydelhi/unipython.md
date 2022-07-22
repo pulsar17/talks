@@ -21,7 +21,7 @@ styles:
 - ~~What I wish I knew about text~~
 
 # Why am I giving this talk
-- Unicode is *confusing*
+- Unicode ~~is~~ can be *confusing*
 
 # What the talk is about
 🍕
@@ -200,9 +200,7 @@ Before we dive into Unicode, let's talk about hexadecimal. Isn't that a nice sys
 
 # Now some Python
 
-```terminal20
-bash -c ipython3
-```
+📎`unicodify.py`
 
 ---------
 ## `ascii`
@@ -268,6 +266,12 @@ For now we'll talk about the process until the code units
     - Not the most legible programming model
 
 ---------
+
+# Yet some more Python
+
+📎`encodings.py`
+
+---------
 # Now some more Python
 
 - Strings in Python are *Unicode strings*
@@ -280,14 +284,6 @@ For now we'll talk about the process until the code units
         ्   U+094D
         य   U+092F
         ा   U+093E
-```
-
-```python
-file = open("file.py", encoding="utf-16")
-file.read()
-```
-```terminal20
-bash -c ipython3
 ```
 
 ---------
