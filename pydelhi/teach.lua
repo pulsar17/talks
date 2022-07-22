@@ -31,23 +31,12 @@ local splitlines = function(text)
     return lines
 end
 
--- Return maximum from a table of integers
-local max = function(t)
-    local max = 0
-    for  _, value in pairs(t) do 
-        if value > max then 
-            max = value
-        end
-    end
-    return max
-end
-
 local calculateWindowDimensions = function(lines)
     local lineLengths = {}
     for _, line in pairs(lines) do 
         table.insert(lineLengths, #line)
     end
-    local maxWidth = max(lineLengths)
+    local maxWidth = math.max(unpack(lineLengths))
     local numLines = #lines
 
     return {maxWidth, numLines}
