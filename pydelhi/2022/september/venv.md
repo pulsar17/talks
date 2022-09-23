@@ -116,7 +116,68 @@ styles:
 
 - use the `venv` module
     - `python3 -m venv venv`
+    - `source venv/bin/activate`
 
+
+- then `pip install`
+
+---------
+# What is a virtual environment
+- a 📁 with a bunch of 📜 and 📁
+```bash
+$ tree -L 2 venv/
+```
+
+---------
+# How do imports work
+
+
+- `import requests`
+
+
+- 🔍 in sys.path: list[📁]
+
+- ```python
+    for dir in sys.path:
+        module = dir.find(name)
+        if module:
+            return module
+
+    raise ModuleNotFoundError
+   ```
+
+---------
+
+# Let me tell you another story
+
+🐍 = 🧑
+
+`pyvenv.cfg` = 👓
+
+`site-packages/` = 🗄
+
+`ENV` = 🏠
+
+---------
+# Forge your own sys.path
+
+- 🧑
+- 👓
+- if 👓 contains `home=*`, then you are in a virtual environment
+- `sys.prefix` = where(👓)
+- ```python 
+    sys.path.append(sys.prefix + 'lib/pythonX.Y/site-packages')
+    ```
+---------
+# The second step
+- `source /venv/bin/activate`
+- optional but recommended
+---------
+# #HereWeGoAgain
+
+```bash
+(venv) $ python3
+```
 ---------
 
 # About the slides
