@@ -22,9 +22,6 @@
 local M = {}
 M.activeWindows = {}
 
--- Match the colors used by Venkat in his talks (https://agiledeveloper.com/aboutus.html)
-vim.highlight.create("TeachWindow", {guibg="#f5e8b1", guifg="#000000"})
-
 -- Split input text by newlines akin to Python's splitlines()
 local splitlines = function(text) 
     lines = {} 
@@ -64,7 +61,8 @@ M.openTeachWindow = function()
     width, height = unpack(calculateWindowDimensions(lines))
     local win = vim.api.nvim_open_win(
         buf, false, {relative='cursor', row=1, col=0, width=width, height=height,  style='minimal'})
-    vim.api.nvim_win_set_option(win, 'winhl', "Normal:TeachWindow,FloatBorder:Error")
+    -- TODO: add a check for QuickFixLine highlight group existence and create one if there is none
+    vim.api.nvim_win_set_option(win, 'winhl', "Normal:QuickFixLine,FloatBorder:Error")
 
     -- We want to be able to close the windows, so some bookkeeping
     table.insert(M.activeWindows, win)
