@@ -8,7 +8,6 @@ styles:
 ---
 
 # `$ whoami`
-- QA Intern at Aakash BYJU's
 - ♥ - 🐍 🐧 🎨
 - [@pulsar17 - GitLab](https://gitlab.com/pulsar17) [@pulsar17 - GitHub](https://github.com/pulsar17)
 - [pulsar17.me](https://pulsar17.me)
